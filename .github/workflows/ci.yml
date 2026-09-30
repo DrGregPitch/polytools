@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          # We don't commit a lockfile, so key the cache on pyproject.toml
+          # instead of the default uv.lock (which would error when absent).
+          cache-dependency-glob: "**/pyproject.toml"
+
+      # Install into a uv-managed venv (not the runner's externally-managed
+      # system Python, which PEP 668 blocks), then run everything through it.
+      - name: Create the environment and install
+        run: |
+          uv venv --python ${{ matrix.python-version }}
+          uv pip install -e ".[all]"
+
+      - name: Lint
+        run: uv run ruff check src tests scripts
+
+      - name: Run tests with coverage
+        run: uv run pytest tests -v --cov=polytools --cov-report=term-missing
+
+      # The benchmark is part of CI on purpose. A results script that silently
+      # rots is the most common way a portfolio repo stops being reproducible,
+      # and it is exactly what a reviewer will try to run first.
+      - name: Run the end-to-end benchmark
+        run: uv run python scripts/run_benchmark.py --outdir /tmp/ci-results --no-figures
+
+      - name: Check the benchmark produced results
+        run: test -s /tmp/ci-results/results.csv

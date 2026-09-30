@@ -1,0 +1,61 @@
+name,psmiles,tg_c,family
+polyethylene,[*]CC[*],-125,polyolefin
+polypropylene,[*]CC(C)[*],-10,polyolefin
+polyisobutylene,[*]CC(C)(C)[*],-73,polyolefin
+poly(1-butene),[*]CC(CC)[*],-24,polyolefin
+poly(4-methyl-1-pentene),[*]CC(CC(C)C)[*],29,polyolefin
+polystyrene,[*]CC([*])c1ccccc1,100,styrenic
+poly(alpha-methylstyrene),[*]CC(C)([*])c1ccccc1,173,styrenic
+poly(4-methylstyrene),[*]CC([*])c1ccc(C)cc1,101,styrenic
+poly(4-chlorostyrene),[*]CC([*])c1ccc(Cl)cc1,110,styrenic
+poly(2-vinylnaphthalene),[*]CC([*])c1ccc2ccccc2c1,151,styrenic
+poly(methyl methacrylate),[*]CC(C)([*])C(=O)OC,105,methacrylate
+poly(ethyl methacrylate),[*]CC(C)([*])C(=O)OCC,65,methacrylate
+poly(n-butyl methacrylate),[*]CC(C)([*])C(=O)OCCCC,20,methacrylate
+poly(n-hexyl methacrylate),[*]CC(C)([*])C(=O)OCCCCCC,-5,methacrylate
+poly(2-hydroxyethyl methacrylate),[*]CC(C)([*])C(=O)OCCO,86,methacrylate
+poly(methacrylic acid),[*]CC(C)([*])C(=O)O,228,methacrylate
+poly(methyl acrylate),[*]CC([*])C(=O)OC,10,acrylate
+poly(ethyl acrylate),[*]CC([*])C(=O)OCC,-24,acrylate
+poly(n-butyl acrylate),[*]CC([*])C(=O)OCCCC,-54,acrylate
+poly(2-ethylhexyl acrylate),[*]CC([*])C(=O)OCC(CC)CCCC,-65,acrylate
+poly(acrylic acid),[*]CC([*])C(=O)O,106,acrylate
+polyacrylamide,[*]CC([*])C(N)=O,165,acrylamide
+poly(N-isopropylacrylamide),[*]CC([*])C(=O)NC(C)C,130,acrylamide
+"poly(N,N-dimethylacrylamide)",[*]CC([*])C(=O)N(C)C,89,acrylamide
+polyacrylonitrile,[*]CC([*])C#N,95,vinyl
+poly(vinyl chloride),[*]CC([*])Cl,81,vinyl
+poly(vinylidene chloride),[*]CC(Cl)(Cl)[*],-17,vinyl
+poly(vinyl alcohol),[*]CC([*])O,85,vinyl
+poly(vinyl acetate),[*]CC([*])OC(C)=O,32,vinyl
+poly(vinyl methyl ether),[*]CC([*])OC,-31,vinyl
+poly(N-vinylpyrrolidone),[*]CC([*])N1CCCC1=O,175,vinyl
+poly(vinyl fluoride),[*]CC(F)[*],41,fluoropolymer
+poly(vinylidene fluoride),[*]CC(F)(F)[*],-35,fluoropolymer
+polytetrafluoroethylene,[*]C(F)(F)C(F)(F)[*],115,fluoropolymer
+poly(chlorotrifluoroethylene),[*]C(F)(F)C(F)(Cl)[*],45,fluoropolymer
+poly(hexafluoropropylene),[*]C(F)(F)C(F)([*])C(F)(F)F,11,fluoropolymer
+poly(ethylene oxide),[*]CCO[*],-60,polyether
+poly(propylene oxide),[*]CC(C)O[*],-75,polyether
+poly(tetramethylene oxide),[*]CCCCO[*],-84,polyether
+"poly(2,6-dimethyl-1,4-phenylene oxide)",[*]c1cc(C)c([*])c(C)c1,210,polyether
+poly(ethylene terephthalate),[*]OCCOC(=O)c1ccc(cc1)C(=O)[*],78,polyester
+poly(butylene terephthalate),[*]OCCCCOC(=O)c1ccc(cc1)C(=O)[*],40,polyester
+poly(lactic acid),[*]OC(C)C(=O)[*],55,polyester
+polycaprolactone,[*]OCCCCCC(=O)[*],-60,polyester
+poly(glycolic acid),[*]OCC(=O)[*],35,polyester
+poly(ethylene naphthalate),[*]OCCOC(=O)c1ccc2cc(ccc2c1)C(=O)[*],120,polyester
+nylon-6,[*]NCCCCCC(=O)[*],47,polyamide
+nylon-6-6,[*]NCCCCCCNC(=O)CCCCC(=O)[*],50,polyamide
+nylon-12,[*]NCCCCCCCCCCCC(=O)[*],37,polyamide
+poly(bisphenol-A carbonate),[*]Oc1ccc(cc1)C(C)(C)c1ccc(cc1)OC(=O)[*],147,polycarbonate
+poly(dimethylsiloxane),[*][Si](C)(C)O[*],-123,siloxane
+poly(diphenylsiloxane),[*][Si](c1ccccc1)(c1ccccc1)O[*],49,siloxane
+poly(methylphenylsiloxane),[*][Si](C)(c1ccccc1)O[*],-28,siloxane
+cis-1-4-polybutadiene,[*]C/C=C\C[*],-102,diene
+cis-1-4-polyisoprene,[*]CC(C)=CC[*],-70,diene
+polychloroprene,[*]CC(Cl)=CC[*],-45,diene
+polysulfone,[*]Oc1ccc(cc1)S(=O)(=O)c1ccc([*])cc1,190,sulfone
+poly(ether ether ketone),[*]Oc1ccc(Oc2ccc(cc2)C(=O)[*])cc1,143,ketone
+poly(ether sulfone),[*]Oc1ccc(cc1)S(=O)(=O)c1ccc(Oc2ccc(cc2)[*])cc1,225,sulfone
+poly(vinyl butyral),[*]CC1COC(CCC)OC1[*],49,acetal

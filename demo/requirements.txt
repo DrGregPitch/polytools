@@ -1,0 +1,6 @@
+# Hugging Face Space dependencies for the Tg demo.
+# polytools is not on PyPI, so install it from your GitHub repo (replace the
+# username, same one you used in SETUP.md). The [gbm] extra pulls LightGBM; the
+# demo itself uses the torch-free sklearn backend, so no PyTorch is needed here.
+polytools[gbm] @ git+https://github.com/DrGregPitch/polytools
+gradio>=4.0
