@@ -141,7 +141,7 @@ def main() -> None:
 
     splits = build_splits(ds)
     rows = []
-    print("\nNeural rung (test RMSE, degC):")
+    print(f"\nNeural rung (test RMSE, {ds.units}):")
     for split_name, sp in splits.items():
         if len(sp.train) < 5 or len(sp.test) < 3:
             continue
@@ -169,7 +169,7 @@ def main() -> None:
     pivot = results.pivot(index="model", columns="split", values="rmse")
     order = [m for m in variants if m in pivot.index]
     pivot = pivot.loc[order]
-    print("\nRMSE (degC) by model and split:")
+    print(f"\nRMSE ({ds.units}) by model and split:")
     print(pivot.round(1).to_string())
     pivot.to_csv(args.outdir / "rmse_gnn.csv")
 
@@ -203,7 +203,7 @@ def main() -> None:
                         results[results.split == s].rmse))
             for s in results.split.unique()
         }
-        ax = split_comparison_plot(comp, metric="rmse", units="degC",
+        ax = split_comparison_plot(comp, metric="rmse", units=args.units,
                                    title="Neural rung: periodic-edge ablation by split")
         ax.figure.savefig(args.outdir / "gnn_ablation.png", dpi=150,
                           bbox_inches="tight")

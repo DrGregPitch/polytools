@@ -193,7 +193,7 @@ def main() -> None:
     pivot = results.pivot(index="model", columns="split", values="rmse")
     order = [m for m in models if m in pivot.index]
     pivot = pivot.loc[order]
-    print("\nRMSE (degC) by model and split:")
+    print(f"\nRMSE ({ds.units}) by model and split:")
     print(pivot.round(1).to_string())
     pivot.to_csv(args.outdir / "rmse_table.csv")
 
