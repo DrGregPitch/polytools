@@ -44,7 +44,7 @@ python scripts/run_benchmark.py --data data_cache/PI1070.csv \
     --psmiles-col smiles --target-col density --units g/cm3 --outdir results
 ```
 
-That regenerates the figure and every number above in ~2 minutes on CPU. Drop the
+That regenerates every number above in ~2 minutes on CPU (the composed headline figure is assembled separately). Drop the
 `--data` flag to run on the bundled 60-polymer toy set instead; point it at any
 polymer CSV to run on yours. `pytest tests -v` runs 51 tests (57 with the `.[gnn]`
 neural-net extra).
@@ -108,14 +108,16 @@ wrapping the repeat unit into a chain — so the model sees a polymer, not a mol
 with two fake ends. The clean experiment that falls out — periodic edge on vs off —
 shows it **helps most on extrapolation**, exactly where chain-continuity should
 matter, and the GNN and gradient boosting **trade wins across splits** (reported,
-not hidden). PyTorch is an optional `.[gnn]` extra, imported lazily.
+not hidden). This ablation runs on the 60-polymer demonstration set (≈12 test
+points per split, single seed), so read it as directional, not a benchmark result.
+PyTorch is an optional `.[gnn]` extra, imported lazily.
 
 ![D-MPNN periodic-edge ablation across splits.](assets/gnn_ablation.png)
 
 ## Error analysis: where it fails, and why a chemist can tell
 
 `scripts/error_analysis.py` computes an out-of-fold residual for every polymer and
-finds where the errors concentrate. **The model shrinks toward the mean** — it
+finds where the errors concentrate (on the 60-polymer demonstration set). **The model shrinks toward the mean** — it
 under-predicts high-Tg families (rigid backbones, cooperative H-bonding) and
 over-predicts low-Tg ones (flexible siloxanes) — because both drivers are invisible
 to a *local* fingerprint. The single biggest miss, poly(2,6-dimethyl-1,4-phenylene
